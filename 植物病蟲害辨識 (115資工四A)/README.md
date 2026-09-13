@@ -90,6 +90,8 @@ App 需求、UML、Flutter 實作與整合；模型與 RAG 的內部設計不放
 
 [YOLO26-nano-P2 Snapdragon 8 Gen 2 即時辨識門檻實機測試報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_snapdragon8gen2_benchmark.md)
 
+[YOLO26-nano-P2 三平台即時辨識實機測試整合報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_three_platforms_benchmark.md)
+
 [行動端離線 RAG 與 LLM 效能測試報告 (含 4-Threads 與 6-Threads 完整數據)](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/20260729_mobile_rag_benchmark.md)
 
 ## 效能指標評估
