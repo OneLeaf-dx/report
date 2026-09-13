@@ -9,7 +9,7 @@
 | [行動端應用程式開發](#行動端應用程式開發) | Flutter 專案結構、需求分析、UML |
 | [病蟲害辨識模型](#病蟲害辨識模型) | 模型訓練數據報告、YOLO26 各版本比較、v8/v5 比較、v5.7 訓練評估與交付、開發週報 |
 | [RAG向量資料庫](#rag向量資料庫) | 架構設計、提示詞、手機效能測試、SLM 微調與訓練資料集 |
-| [系統測試與評估](#系統測試與評估) | 各模型 TFLite benchmark 報告、匯出參數與行動端延遲掃描、即時辨識採用門檻 |
+| [系統測試與評估](#系統測試與評估) | 各模型 TFLite benchmark 報告、匯出參數與行動端延遲掃描、即時辨識採用門檻（含高階裝置） |
 | [效能指標評估](#效能指標評估) | 影像辨識與 RAG/SLM 模組的效能指標定義 |
 | [資料集分析](#資料集分析) | 資料集統計報告、標註一致性量測 |
 | [參考文獻與參考資料](#參考文獻與參考資料) | 論文文獻、開源專案參考 |
@@ -85,6 +85,10 @@ App 需求、UML、Flutter 實作與整合；模型與 RAG 的內部設計不放
 [YOLO26-nano-P2 匯出參數與行動端延遲全面掃描報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_export_params_benchmark.md)
 
 [YOLO26-nano-P2 即時辨識採用門檻實機測試報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_realtime_gate_benchmark.md)
+
+[YOLO26-nano-P2 天璣 8300 即時辨識門檻實機測試報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_dimensity8300_benchmark.md)
+
+[YOLO26-nano-P2 Snapdragon 8 Gen 2 即時辨識門檻實機測試報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/yolo26n_p2_snapdragon8gen2_benchmark.md)
 
 [行動端離線 RAG 與 LLM 效能測試報告 (含 4-Threads 與 6-Threads 完整數據)](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/20260729_mobile_rag_benchmark.md)
 
