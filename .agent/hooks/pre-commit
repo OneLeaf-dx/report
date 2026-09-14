@@ -4,6 +4,9 @@
 # 安裝：powershell -ExecutionPolicy Bypass -File .agent/hooks/install-hooks.ps1
 # 這支 hook 納入版控，每位成員各自安裝一次即可。
 
+# 以 repo 根目錄為基準，不依賴 hook 被呼叫時的工作目錄。
+repo_root=$(git rev-parse --show-toplevel)
+
 # 腳本輸出含中文。git 執行 hook 時 stdout 被重導，PowerShell 會退回主控台
 # 的 OEM 代碼頁而印出亂碼，因此明確指定 UTF-8 再呼叫。
 run() {
