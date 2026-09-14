@@ -35,7 +35,7 @@
 - **範圍**：規則文件
 - **摘要**：`audit-structure.ps1` 新增第 15 項指標 `chapter_intro_too_long`，把 §1「L1 章導覽每章章旨 3 行以內」從文字規定改成腳本檢查，納入棘輪。算法：只看 H2 文字等於章資料夾名稱的區塊（「總覽」不列入），從 H2 下一行起算非空行，到第一個子標題或第一行「整行只有連結」為止，超過 3 行計一筆。實際盤點各章章旨為行動端 3 行、RAG 2 行、其餘 1 行，無一超標，因此章旨文字未改動，基準線新增此項為 0。自測：在暫存複本把〈系統測試與評估〉章旨加長到 4 行，指標 0 → 1、exit 1，總覽與剛好 3 行的行動端都沒有誤報。`.ps1` 與 `baseline.json` 維持 UTF-8 BOM + CRLF。同步更新 `SPECIFICATION.md` §1 的行數算法與 §6.1 指標對照表、`AGENTS.md` 的指標數（14 → 15）、`add-report` 的章導覽提醒
 - **影響檔案**：`.agent/scripts/audit-structure.ps1`、`.agent/baseline.json`、`.agent/SPECIFICATION.md`、`.agent/skills/add-report/SKILL.md`、`AGENTS.md`
-- **commit**：`(待回填)`
+- **commit**：`ec0e014`
 
 ---
 
