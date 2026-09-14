@@ -366,10 +366,6 @@ SSD-MobileNetV3 系列模型在兩階段訓練（Phase 1 與 Phase 2）過程中
 
 ![SSD Small Confusion Matrix](Image/20260714_all_models_training_metrics/ssd_mnv3_small_confusion_matrix.png)
 
-- PR 曲線對比圖：
-
-![SSD PR Comparison](Image/20260714_all_models_training_metrics/ssd_mnv3_pr_comparison.png)
-
 ### 3. 混淆矩陣極端數據查證與分析
 
 針對 SSD 系列模型在混淆矩陣中呈現的「極端分佈」（例如：`P_AP_LD` 與 `P_TP_LD` 全為 0，以及 `P_SI` 漏檢高達 1561 個），我們對 COCO 原始標註檔與推論預測分佈進行了嚴謹的學術查證，確認該矩陣**精確且客觀地反映了資料集的真實分佈及模型架構的極限**：
@@ -404,8 +400,6 @@ YOLO26 系列的整體指標高於 SSD-MobileNetV3 系列。
 
 - **SSD-MobileNetV3** 在 Phase 1（1~5 Epochs）僅微調偵測頭時，Loss 從 12.16 降至 5.58。解凍骨幹（Epoch 6）後，mAP 穩步提升至最優。
 - **YOLO26** 從首個 Epoch 即開始進行全網更新，收斂速度較快。例如 YOLO26-large 在 Epoch 10 即可達到 mAP@50 = 0.8254。
-
-![ssd_small_confusion_matrix.png](Image/20260714_all_models_training_metrics/ssd_mnv3_small_confusion_matrix.png)
 
 ## 7. 結論與限制
 
