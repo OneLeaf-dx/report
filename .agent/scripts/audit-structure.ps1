@@ -36,6 +36,9 @@ if (-not $Root) { $Root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot) 
 $reportDir   = Join-Path $Root '植物病蟲害辨識 (115資工四A)'
 $baselineFile = Join-Path (Split-Path -Parent $PSScriptRoot) 'baseline.json'
 
+# §1：L1 章導覽每章的章旨不得超過這個行數
+$MaxChapterIntroLines = 3
+
 if (-not (Test-Path -LiteralPath $reportDir)) {
     Write-Host "找不到報告目錄：$reportDir" -ForegroundColor Red
     exit 1
@@ -76,6 +79,7 @@ $m = [ordered]@{
     image_placeholder_name    = 0   # 5.3 匯出工具亂碼檔名
     image_uuid_name           = 0   # 5.3 UUID 檔名
     orphan_images             = 0   # 資產資料夾裡沒有任何 md 引用到的圖
+    chapter_intro_too_long    = 0   # §1 L1 章旨超過 3 行
 }
 $details = @{}
 foreach ($k in $m.Keys) { $details[$k] = @() }
@@ -117,6 +121,38 @@ foreach ($file in Get-ChildItem -LiteralPath $reportDir -Recurse -File -Filter *
     $base = $file.BaseName
     if ($base -match '\s')       { Add-Hit filename_with_space $rel }
     if ($base -match '[()（）]') { Add-Hit filename_with_paren $rel }
+}
+
+# --- 掃描 L1 章導覽的章旨長度 -----------------------------------------------
+# §1 規定 L1 章導覽只做導覽：每章一個 H2，章旨 3 行以內 + 子篇清單。
+# 章旨 = 章 H2 的下一行起，到第一個子標題或第一行「整行只有連結」為止的非空行。
+# 只認 H2 文字等於章資料夾名稱的區塊，「## 總覽」這類非章區塊不列入。
+$l1File = Join-Path $reportDir 'README.md'
+if (Test-Path -LiteralPath $l1File) {
+    $l1Rel = Get-RelPath -Base $Root -Full $l1File
+    $chapterNames = @(Get-ChildItem -LiteralPath $reportDir -Directory | ForEach-Object { $_.Name })
+    $linkOnlyRx = [regex]'^\s*[-*]?\s*!?\[[^\]]*\]\([^)]*\)\s*$'
+    $l1Lines = [System.IO.File]::ReadAllLines($l1File)
+
+    for ($i = 0; $i -lt $l1Lines.Length; $i++) {
+        if ($l1Lines[$i] -notmatch '^##\s+(.+?)\s*$') { continue }
+        $chapter = $Matches[1]
+        if ($chapterNames -notcontains $chapter) { continue }
+
+        $introLines = 0
+        $inFence = $false
+        for ($j = $i + 1; $j -lt $l1Lines.Length; $j++) {
+            $line = $l1Lines[$j]
+            if ($line -match '^\s*```') { $inFence = -not $inFence; continue }
+            if ($inFence) { continue }
+            if ($line -match '^#{1,6}\s') { break }
+            if ($linkOnlyRx.IsMatch($line)) { break }
+            if ($line.Trim()) { $introLines++ }
+        }
+        if ($introLines -gt $MaxChapterIntroLines) {
+            Add-Hit chapter_intro_too_long "$l1Rel  ## $chapter（$introLines 行）"
+        }
+    }
 }
 
 # --- 蒐集被 md 引用到的目標（供孤兒圖片判斷）-------------------------------

@@ -50,7 +50,7 @@ powershell -ExecutionPolicy Bypass -File .agent/scripts/audit-structure.ps1
 | 腳本 | 檢查 | 通過條件 |
 | --- | --- | --- |
 | `verify-links.ps1` | 全庫相對連結與圖片是否指向存在的檔案 | 斷鏈 **必須為 0** |
-| `audit-structure.ps1` | 14 項結構／標題／檔名／資產指標，與 `.agent/baseline.json` 比對 | 任何一項**都不得上升** |
+| `audit-structure.ps1` | 15 項結構／標題／檔名／資產指標，與 `.agent/baseline.json` 比對 | 任何一項**都不得上升** |
 
 `audit-structure.ps1` 採**棘輪機制**：既有問題不必一次修完，但不允許新增。修好一批後才執行 `-UpdateBaseline` 收緊基準線。用 `-Verbose` 可列出逐項清單。
 

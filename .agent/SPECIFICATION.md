@@ -20,7 +20,7 @@
 
 **規則**
 
-1. L1 章導覽不得寫正文。某章即使目前只有一篇內容，仍應拆成「導覽區塊 + 一篇 L2」。跨章互相引用時，指向 `README.md#<章名>` 錨點。
+1. L1 章導覽不得寫正文。某章即使目前只有一篇內容，仍應拆成「導覽區塊 + 一篇 L2」。跨章互相引用時，指向 `README.md#<章名>` 錨點。章旨的「3 行」以非空行計：從章的 H2 下一行起，算到第一個子標題或第一行「整行只有連結」為止（指標 `chapter_intro_too_long`）。
 2. 圖片一律放在該章 `Image/` 底下與報告同名的資產資料夾，不共用、不跨篇引用。多篇需要同一張圖時，改為在文中連結到原報告章節。
 3. md 之間互相引用一律使用**相對路徑**，不得寫絕對網址。
 
@@ -183,6 +183,7 @@ powershell -ExecutionPolicy Bypass -File .agent/scripts/audit-structure.ps1 -Ver
 | `image_serial_suffix` | N-4 圖檔以流水號結尾 |
 | `image_placeholder_name` / `image_uuid_name` | §5.3 匯出工具產生的無語意檔名 |
 | `orphan_images` | §1 規則 2 資產資料夾裡沒有任何 md 引用到的圖（刪報告時漏刪的殘留） |
+| `chapter_intro_too_long` | §1 L1 章導覽某章的章旨超過 3 行（非空行，算到第一個子標題或子篇連結為止） |
 
 ### 6.2 章的職責重疊（已完成）
 
