@@ -4,6 +4,12 @@
 
 柑橘病蟲害端側辨識與離線 RAG 防治決策系統的研究報告主體。各章職責界線見 [`.agent/SPECIFICATION.md`](../.agent/SPECIFICATION.md) §2。
 
+系統採端側離線優先設計，三大模組如下：
+
+- **影像辨識**：以 YOLO26 系列（含 Nano / Nano-P2 / Large）訓練柑橘葉部病蟲害偵測模型，量化為 TFLite FP16 後部署至手機。
+- **RAG 向量資料庫**：SQLite + FTS5 + sqlite-vec 建構本地向量檢索，搭配 LLaMA-Factory 微調的 Qwen2.5-0.5B GGUF 小語言模型，離線產生防治建議。
+- **行動端應用程式**：以 Flutter 開發 Android / iOS App，整合上述兩個模組。
+
 | 章節 | 內容 |
 | --- | --- |
 | [行動端應用程式開發](#行動端應用程式開發) | Flutter 專案結構、需求分析、UML |
