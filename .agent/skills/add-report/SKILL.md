@@ -39,38 +39,31 @@ description: 新增一篇報告到報告庫時使用。涵蓋放哪一章的判�
 
 ## 4. 骨架
 
-依 [`SPECIFICATION.md`](../../SPECIFICATION.md) §3。實驗類報告用這個模板：
+**從模板開始，不要自己排版。** 依類型複製 [`.agent/templates/`](../../templates) 裡的對應檔案：
 
-```markdown
-# <報告全名>
-
-> 報告日期：2026-08-27
-> 評測對象：yolo26n_p2（FP16 TFLite）
-> 資料來源：runs/train/exp12/results.csv、args.yaml
-> 撰寫人：<姓名>
-
-## 1. 摘要
-
-- 結論一
-- 結論二
-- 結論三
-
-| 指標 | 數值 |
+| 這篇是 | 模板 |
 | --- | --- |
-| mAP50 | 0.00000 |
+| 訓練報告 | `training_report_template.md` |
+| 基準測試 | `benchmark_template.md` |
+| 版本比較 | `comparison_template.md` |
+| 資料集統計 | `dataset_stats_template.md` |
+| 週期報告 | `weekly_report_template.md` |
+| 設計／說明 | `design_doc_template.md` |
 
-## 2. 方法與環境
+步驟：
 
-## 3. 數據與分析
+1. 把模板複製到第 3 步決定的位置，檔名依第 2 步：
 
-## 4. 結論與限制
+   ```powershell
+   Copy-Item .agent/templates/training_report_template.md "植物病蟲害辨識 (115資工四A)/病蟲害辨識模型/20260729_yolo26n_p2_training_report.md"
+   ```
 
-本報告未涵蓋：
-```
+2. 填入所有 `<...>` 佔位欄位。模型名稱依 [`SPECIFICATION.md`](../../SPECIFICATION.md) §5.4：檔名用代號、正文用正式名稱
+3. 模板裡的連結與圖片範例寫在行內程式碼裡（否則 verify-links 會把佔位路徑當成斷鏈），填寫時去掉反引號、換成實際相對路徑
+4. 刪除所有 `<!-- -->` 指引註解。用不到的選用節整節刪除，並把後面的 H2 編號往前遞補
+5. 超過 400 行時，在報告資訊區塊之後加 `## 目錄`
 
-設計／說明類報告免除第 2、3 段，第 1 段（H1）、報告資訊區塊、第 4 段仍必要。
-
-超過 400 行時，在報告資訊區塊之後加 `## 目錄`。
+哪些段落固定、中段怎麼分，見 [`SPECIFICATION.md`](../../SPECIFICATION.md) §3。**模板是骨架的唯一來源**，不要在這裡另抄一份——兩份一定會漂移。
 
 ## 5. 標題規則
 

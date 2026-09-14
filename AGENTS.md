@@ -97,7 +97,7 @@ git show --stat <hash>
 規範本體在 [`.agent/SPECIFICATION.md`](.agent/SPECIFICATION.md)，**不要在別處另寫一份**：
 
 - 目錄層級與章的職責界線 → §1、§2
-- 單篇報告骨架 → §3
+- 單篇報告骨架 → §3；各類型的骨架模板 → [`.agent/templates/`](.agent/templates)
 - 標題規範 H-1～H-6 → §4
 - 檔名規範 N-1～N-5、圖檔字典、名詞統一表 → §5
 
