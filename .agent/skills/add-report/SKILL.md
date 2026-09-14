@@ -103,6 +103,8 @@ description: 新增一篇報告到報告庫時使用。涵蓋放哪一章的判�
 
 **章導覽只放導覽，不要順手把正文寫進去。** 那 191 行的〈行動端應用程式開發〉正是這樣長出來的。某章的章旨超過 3 行，會被 `audit-structure.ps1` 的 `chapter_intro_too_long` 擋下。
 
+若新報告取代了 [`SUMMARY.md`](../../../SUMMARY.md) 引用的結論或數字，同步更新 SUMMARY：只摘錄、附原報告連結、改完同樣要經人類核准。
+
 ## 8. 驗證
 
 ```powershell
