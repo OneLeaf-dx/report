@@ -35,7 +35,7 @@
 - **範圍**：其他
 - **摘要**：修正 pre-commit hook 的 CHANGELOG 膨脹提醒從未觸發的問題。提醒區塊用 `$repo_root/CHANGELOG.md` 找檔案，但 `$repo_root` 從未定義，路徑變成 `/CHANGELOG.md`，`[ -f ]` 判斷永遠不成立，所以不論 CHANGELOG 多長都不會提醒；兩支驗證關卡不受影響（它們在 PowerShell 內自行取得根目錄）。改為在 hook 開頭以 `git rev-parse --show-toplevel` 定義 `repo_root`。在暫存 repo 用假的 `powershell` 讓兩支關卡直接通過後測試：60 筆的 CHANGELOG，舊版不提醒（重現問題），新版在 repo 根目錄與子目錄呼叫都會提醒；3 筆時不提醒。hook 維持 LF（無 CR）。本 repo 目前 CHANGELOG 未達門檻，commit 不會出現提醒
 - **影響檔案**：`.agent/hooks/pre-commit`
-- **commit**：`(待回填)`
+- **commit**：`2c1ba62`
 
 ---
 
