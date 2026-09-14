@@ -35,7 +35,7 @@
 - **範圍**：內容
 - **摘要**：依使用者指名，刪除〈模型訓練數據報告〉（`20260714_all_models_training_metrics.md`）中兩張重複引用的圖。`ssd_mnv3_pr_comparison.png` 是 SSD-MobileNetV3 large 與 small 的 PR 對比圖，已在 §5.1 SSD-large 段出現，刪除 §5.2 SSD-small 段重複的「PR 曲線對比圖」條目與圖。`ssd_mnv3_small_confusion_matrix.png` 保留 §5.2 SSD-small 段的原位置，刪除錯置在 §6.3「兩階段訓練與單階段訓練收斂效率」段落末尾、以檔名當圖說的那一張。兩處都是 Notion 匯出時的重複貼上殘留，只刪圖片與其條目，未改動任何敘述或數字。圖片連結 50 → 48，與版控圖檔數一致；兩張圖仍各被引用一次，無孤兒圖。`AGENTS.md` 的「48 張圖表」經查為正確，不需修改
 - **影響檔案**：`植物病蟲害辨識 (115資工四A)/病蟲害辨識模型/20260714_all_models_training_metrics.md`
-- **commit**：`(待回填)`
+- **commit**：`37e2c00`
 
 ---
 
