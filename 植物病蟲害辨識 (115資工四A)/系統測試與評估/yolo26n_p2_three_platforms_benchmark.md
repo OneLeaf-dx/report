@@ -4,7 +4,7 @@
 > **評測對象**：YOLO26-nano-P2（v11.5 權重 `last.pt`，9 類）的 fp32 匯出，輸入解析度 320、416、512、640 × end2end 開與關共 8 個組合，於 Snapdragon 662 手機、天璣 8300 平板、Snapdragon 8 Gen 2 手機三台裝置上，以同一套協定量測的 CPU 短時間延遲、CPU 持續負載、GPU delegate 與 NNAPI
 > **資料來源**：`adb logcat -s tflite` 實機測試 log、溫度紀錄與量測 JSON（原始檔存於訓練用程式碼庫 `OneLeaf-dx/detection` 的 `Benchmark/report/`，量測計畫與結果文件為其 `docs/v12.3_*`，不在本文件庫版控範圍）。各裝置的個別報告見〈[YOLO26-nano-P2 即時辨識採用門檻實機測試報告](yolo26n_p2_realtime_gate_benchmark.md)〉、〈[YOLO26-nano-P2 天璣 8300 即時辨識門檻實機測試報告](yolo26n_p2_dimensity8300_benchmark.md)〉與〈[YOLO26-nano-P2 Snapdragon 8 Gen 2 即時辨識門檻實機測試報告](yolo26n_p2_snapdragon8gen2_benchmark.md)〉
 > **撰寫人**：Claude Code
-> **更新**：2026-09-15 補入天璣 8300 `fp32@416`（end2end 關）的持續負載補量；mAP50 改依 end2end 開或關分別列出
+> **更新**：2026-09-15 補入天璣 8300 `fp32@416`（end2end 關）的持續負載補量；mAP50 改依 end2end 開或關分別列出；交付模型代號定為 v13
 
 ## 1. 摘要
 
@@ -187,7 +187,7 @@ Snapdragon 662 的首次量測（〈[YOLO26-nano-P2 匯出參數與行動端延�
 - **GPU 與 NNAPI 各只量 1 輪**；持續負載只量了門檻規則指定的組合。
 - **短時間量測的 3 輪最小值不一定是下限**：Snapdragon 662 連續跑反而更快，Snapdragon 8 Gen 2 的三輪最多相差 1.9 倍。
 - **FPS 為模型推論本身的上限**，App 完整管線的實際 FPS 會更低。
-- **量測使用 v11.5 權重的匯出檔。** 延遲不受權重影響（架構與輸入尺寸相同），但交付權重已改為 v11.5 在 v5.7 資料集上重訓的版本（見〈[柑橘病蟲害 YOLO26-nano-P2 v5.7 資料集訓練評估與交付報告](../%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260913_yolo26n_p2_training_report.md)〉），App 實際採用的組合仍需以交付權重重新匯出並重評精度。
+- **量測使用 v11.5 權重的匯出檔。** 延遲不受權重影響（架構與輸入尺寸相同），但交付模型已改為 v13（v11.5 的訓練碼在 v5.7 資料集上重訓，見〈[柑橘病蟲害 YOLO26-nano-P2 v13 訓練評估與交付報告](../%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260913_yolo26n_p2_training_report.md)〉），App 實際採用的組合仍需以 v13 重新匯出並重評精度。
 
 本報告未涵蓋：
 

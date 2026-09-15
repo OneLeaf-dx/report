@@ -52,7 +52,7 @@ App 需求、UML、Flutter 實作與整合；模型與 RAG 的內部設計不放
 
 [柑橘病蟲害辨識階段性進度週報（2026-09-07）](%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260907_weekly_report.md)
 
-[柑橘病蟲害 YOLO26-nano-P2 v5.7 資料集訓練評估與交付報告](%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260913_yolo26n_p2_training_report.md)
+[柑橘病蟲害 YOLO26-nano-P2 v13 訓練評估與交付報告](%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260913_yolo26n_p2_training_report.md)
 
 [柑橘病蟲害辨識階段性進度週報（2026-09-13）](%E7%97%85%E8%9F%B2%E5%AE%B3%E8%BE%A8%E8%AD%98%E6%A8%A1%E5%9E%8B/20260913_weekly_report.md)
 
