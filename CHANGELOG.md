@@ -35,7 +35,7 @@
 - **範圍**：內容
 - **摘要**：依使用者決定，交付模型定代號 v13。查明版本號是全案共用的流水號、不是「資料集＋模型尺度」（v11 與 v11.5 都是 v5.6＋nano；v12 至 v12.3 是部署線工作），run 名格式為「{資料集}_{訓練版本}」，因此 09-13 起交付的權重（run `v5.7_v11_5`，v11.5 訓練碼＋v5.7 資料集）原本沒有自己的版本號，前一筆寫成「v11.5（v5.7 資料集）」。v13 只當別名：訓練輸出、run 名與檔名都不改。訓練評估報告標題改為〈柑橘病蟲害 YOLO26-nano-P2 v13 訓練評估與交付報告〉，檔名不變，各篇連結文字同步；表內「v11.5 對照臂」「v5.7 資料集（對照臂）」等欄名改為 v13，外部影像臂寫作「v13 外部影像臂」；各篇資訊區塊的更新說明補上代號。數字未變動。兩支關卡腳本皆 PASS
 - **影響檔案**：`SUMMARY.md`；`植物病蟲害辨識 (115資工四A)/README.md`；`病蟲害辨識模型/` 下 `20260913_weekly_report.md`、`20260913_yolo26n_p2_training_report.md`；`系統測試與評估/` 下 `yolo26n_p2_dimensity8300_benchmark.md`、`yolo26n_p2_snapdragon8gen2_benchmark.md`、`yolo26n_p2_three_platforms_benchmark.md`、`yolo26n_p2_realtime_gate_benchmark.md`；`資料集分析/yolo26_v5-7_dataset_stats.md`
-- **commit**：`(待回填)`
+- **commit**：`3231877`
 
 ---
 
