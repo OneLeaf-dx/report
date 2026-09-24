@@ -39,6 +39,15 @@
 
 ---
 
+## 2026-09-24 22:15 ── Antigravity
+
+- **範圍**：內容
+- **摘要**：補充消融實驗報告 §2.4 專有名詞與指標定義（PREP Rate、Faithfulness、Context Precision/Recall 等）及 §2.5~2.6 裁判模型 (Qwen2.5-7B @ T=0.0) 配置與 NLI 語意審計評分流程。兩支關卡腳本皆 PASS
+- **影響檔案**：植物病蟲害辨識 (115資工四A)/系統測試與評估/20260924_citrus_rag_ablation_study.md
+- **commit**：(待回填)
+
+---
+
 ## 2026-09-24 22:08 ── Antigravity
 
 - **範圍**：內容
