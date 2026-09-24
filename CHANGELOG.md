@@ -39,6 +39,15 @@
 
 ---
 
+## 2026-09-25 00:28 — Claude Code
+
+- **範圍**：內容
+- **摘要**：依 DreamOver9183 指示，〈TAAI2026〉章新增 Word 版論文 `taai2026-domestic-full-paper.docx`，並移除繪圖腳本 `make_figs.py`（使用者要求不上傳生成腳本）。Word 版由 `.tex` 逐段轉出，版面沿用 PDF（A4、雙欄、12 pt、Times New Roman＋Noto Sans TC Thin）：與 PDF 的文字逐字比對一致，差異只有圖表浮動位置與行尾連字號；通過 OOXML 結構驗證；以 LibreOffice 轉成 PDF 為 6 頁。〈論文修訂說明〉、章導覽、`SPECIFICATION.md` §2 與 `.tex` 開頭註解中對腳本的引用一併改寫，表 10-1 新增第 11 項「Word 版的版面」。論文文字與數據未變動。兩支關卡腳本皆 PASS
+- **影響檔案**：`植物病蟲害辨識 (115資工四A)/TAAI2026/` 下新增 `taai2026-domestic-full-paper.docx`、刪除 `make_figs.py`、修改 `論文修訂說明.md` 與 `taai2026-domestic-full-paper.tex`（僅註解）；`植物病蟲害辨識 (115資工四A)/README.md`；`.agent/SPECIFICATION.md`
+- **commit**：`(待回填)`
+
+---
+
 ## 2026-09-24 23:43 — Claude Code
 
 - **範圍**：內容
