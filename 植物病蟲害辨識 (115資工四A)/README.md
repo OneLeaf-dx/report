@@ -100,6 +100,8 @@ App 需求、UML、Flutter 實作與整合；模型與 RAG 的內部設計不放
 
 [行動端離線 RAG 與 LLM 效能測試報告 (含 4-Threads 與 6-Threads 完整數據)](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/20260729_mobile_rag_benchmark.md)
 
+[柑橘病蟲害端側 RAG 五階段累加式消融實驗報告](%E7%B3%BB%E7%B5%B1%E6%B8%AC%E8%A9%A6%E8%88%87%E8%A9%95%E4%BC%B0/20260924_citrus_rag_ablation_study.md)
+
 ## 效能指標評估
 
 只放效能指標的定義：名稱、公式、單位、評測方法。實測數值請見〈[系統測試與評估](#系統測試與評估)〉。
