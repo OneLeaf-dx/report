@@ -46,7 +46,7 @@
 - **範圍**：其他
 - **摘要**：依使用者指示封存 CHANGELOG：主檔已有 54 筆、55,606 bytes，超過封存門檻（> 50 筆或 > 50 KB）。依 `commit-and-push` skill，主檔保留最近 15 筆（2026-09-14 15:39 起），2026-08-27 ~ 2026-09-14 的其餘 39 筆連同分隔線整段搬到 `.agent/changelog_archive/20260827_20260914_changelog.md`，條目逐字未改；規則區分隔線上方補一行封存索引，封存目錄 README 的「目前狀態」改列此封存檔。兩支關卡腳本皆 PASS
 - **影響檔案**：`CHANGELOG.md`；新增 `.agent/changelog_archive/20260827_20260914_changelog.md`；修改 `.agent/changelog_archive/README.md`
-- **commit**：(待回填)
+- **commit**：`58a868b`
 
 ---
 
